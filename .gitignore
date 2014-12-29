@@ -4,3 +4,4 @@ build
 *.pbxuser
 xcuserdata
 test/yaml/bigboy.yaml
+YAML.xcodeproj/project.xcworkspace/xcshareddata/*

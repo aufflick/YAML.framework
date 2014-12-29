@@ -6,48 +6,70 @@
 //  Copyright 2011 PDAgent, LLC. Released under MIT License.
 //
 
-#import "YAMLUnitTests.h"
+#import <Cocoa/Cocoa.h>
+#import <XCTest/XCTest.h>
 #import "YAMLSerialization.h"
+
+@interface YAMLUnitTests : XCTestCase
+
+@end
 
 @implementation YAMLUnitTests
 
-- (void)setUp
-{
-    [super setUp];
-    
-    // Set-up code here.
+#pragma mark - Setup
+
+- (void)setUp {
+  [super setUp];
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
+- (void)tearDown {
+  [super tearDown];
 }
 
-- (void)testReadData
-{
-    NSString *fileName = [[NSBundle bundleForClass:[self class]] pathForResource:@"basic" ofType:@"yaml"];
+#pragma mark - Tests
+
+
+- (void)testYAMLReadData {
+  NSString *fileName = [[NSBundle bundleForClass:[self class]] pathForResource:@"basic"
+                                                                        ofType:@"yaml"];
 	NSData *data = [NSData dataWithContentsOfFile:fileName];
-    NSTimeInterval before = [[NSDate date] timeIntervalSince1970];
-	NSMutableArray *yaml = [YAMLSerialization YAMLWithData: data options: kYAMLReadOptionStringScalars error: nil];
-	NSLog(@"YAMLWithData took %f", ([[NSDate date] timeIntervalSince1970] - before));
-	NSLog(@"%@", yaml);
-    STAssertEquals((int) 10, (int) [yaml count], @"Wrong number of expected objects");
+  
+  NSTimeInterval before = [[NSDate date] timeIntervalSince1970];
+  
+  NSError *error;
+  NSMutableArray *yaml = [YAMLSerialization objectsWithYAMLData:data
+                                                        options:kYAMLReadOptionStringScalars
+                                                          error:&error];
+  
+  // TODO(greg_fu): Add error assertion
 
+  XCTAssertNil(error, @"There should be no error");
+	NSLog(@"YAMLWithData took %f", ([[NSDate date] timeIntervalSince1970] - before));
+  
+	NSLog(@"%@", yaml);
+  
+  // TODO(greg_fu): change to xcassert
+  XCTAssertEqual((int) 10, (int) [yaml count], @"Wrong number of expected objects");
 }
 
-- (void)testReadStream
-{
-    NSString *fileName = [[NSBundle bundleForClass:[self class]] pathForResource:@"basic" ofType:@"yaml"];
-    NSInputStream *stream = [[NSInputStream alloc] initWithFileAtPath: fileName];
-    NSError *err = nil;
+- (void)testReadStream {
+  NSString *fileName = [[NSBundle bundleForClass:[self class]] pathForResource:@"basic"
+                                                                          ofType:@"yaml"];
+  NSInputStream *stream = [[NSInputStream alloc] initWithFileAtPath: fileName];
+
+  NSError *error;
 	NSTimeInterval before2 = [[NSDate date] timeIntervalSince1970]; 
-	NSMutableArray *yaml2 = [YAMLSerialization YAMLWithStream: stream options: kYAMLReadOptionStringScalars error: &err];
+	NSMutableArray *yaml2 = [YAMLSerialization objectsWithYAMLStream:stream
+                                                           options:kYAMLReadOptionStringScalars
+                                                             error:&error];
+  
+  XCTAssertNil(error, @"Error should not be raised");
 	NSLog(@"YAMLWithStream took %f", ([[NSDate date] timeIntervalSince1970] - before2));
-	NSLog(@"%@", yaml2);
-    STAssertEquals((int) 10, (int) [yaml2 count], @"Wrong number of expected objects");
-    
+	
+  NSLog(@"%@", yaml2);
+  
+  // TODO(gfurman): Convert to xctest
+  XCTAssertEqual((int) 10, (int) [yaml2 count], @"Wrong number of expected objects");
 }
 
 @end

@@ -40,62 +40,62 @@ extern NSString *const YAMLErrorDomain;
 #pragma mark YAML reading
 
 // Returns all document objects from parsed YAML stream.
-+ (NSMutableArray *) objectsWithYAMLStream: (NSInputStream *) stream
-                                   options: (YAMLReadOptions) opt
-                                     error: (NSError **) error;
++ (NSMutableArray *) objectsWithYAMLStream:(NSInputStream *) stream
+                                   options:(YAMLReadOptions) opt
+                                     error:(NSError **) error;
 
 // Returns all document objects from parsed YAML data.
-+ (NSMutableArray *) objectsWithYAMLData: (NSData *) data
-                                 options: (YAMLReadOptions) opt
-                                   error: (NSError **) error;
++ (NSMutableArray *) objectsWithYAMLData:(NSData *) data
+                                 options:(YAMLReadOptions) opt
+                                   error:(NSError **) error;
 
 // Returns all document objects from parsed YAML string.
-+ (NSMutableArray *) objectsWithYAMLString: (NSString *) string
-                                   options: (YAMLReadOptions) opt
-                                     error: (NSError **) error;
++ (NSMutableArray *) objectsWithYAMLString:(NSString *) string
+                                   options:(YAMLReadOptions) opt
+                                     error:(NSError **) error;
 
 // Returns first object from parsed YAML stream.
-+ (id) objectWithYAMLStream: (NSInputStream *) stream
-                    options: (YAMLReadOptions) opt
-                      error: (NSError **) error;
++ (id) objectWithYAMLStream:(NSInputStream *) stream
+                    options:(YAMLReadOptions) opt
+                      error:(NSError **) error;
 
 // Returns first object from parsed YAML data.
-+ (id) objectWithYAMLData: (NSData *) data
-                  options: (YAMLReadOptions) opt
-                    error: (NSError **) error;
++ (id) objectWithYAMLData:(NSData *) data
+                  options:(YAMLReadOptions) opt
+                    error:(NSError **) error;
 
 // Returns first object from parsed YAML string.
-+ (id) objectWithYAMLString: (NSString *) string
-                    options: (YAMLReadOptions) opt
-                      error: (NSError **) error;
++ (id) objectWithYAMLString:(NSString *) string
+                    options:(YAMLReadOptions) opt
+                      error:(NSError **) error;
 
 #pragma mark Writing YAML
 
 // Returns YES on success, NO otherwise.
-+ (BOOL) writeObject: (id) object
-        toYAMLStream: (NSOutputStream *) stream
-             options: (YAMLWriteOptions) opt
-               error: (NSError **) error;
++ (BOOL) writeObject:(id) object
+        toYAMLStream:(NSOutputStream *) stream
+             options:(YAMLWriteOptions) opt
+               error:(NSError **) error;
 
 // Caller is responsible for releasing returned object.
-+ (NSData *) createYAMLDataWithObject: (id) object
-                              options: (YAMLWriteOptions) opt
-                                error: (NSError **) error NS_RETURNS_RETAINED;
++ (NSData *) createYAMLDataWithObject:(id) object
+                              options:(YAMLWriteOptions) opt
+                                error:(NSError **) error NS_RETURNS_RETAINED;
 
 // Returns autoreleased object.
-+ (NSData *) YAMLDataWithObject: (id) object
-                        options: (YAMLWriteOptions) opt
-                          error: (NSError **) error;
++ (NSData *) YAMLDataWithObject:(id) object
+                        options:(YAMLWriteOptions) opt
+                          error:(NSError **) error;
 
 // Caller is responsible for releasing returned object.
-+ (NSString *) createYAMLStringWithObject: (id) object
-                                  options: (YAMLWriteOptions) opt
-                                    error: (NSError **) error NS_RETURNS_RETAINED;
++ (NSString *) createYAMLStringWithObject:(id) object
+                                  options:(YAMLWriteOptions) opt
+                                    error:(NSError **) error NS_RETURNS_RETAINED;
 
 // Returns autoreleased object.
-+ (NSString *) YAMLStringWithObject: (id) object
-                            options: (YAMLWriteOptions) opt
-                              error: (NSError **) error;
++ (NSString *) YAMLStringWithObject:(id) object
+                            options:(YAMLWriteOptions) opt
+                              error:(NSError **) error;
 
 #pragma mark Deprecated
 

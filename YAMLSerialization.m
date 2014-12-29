@@ -27,7 +27,7 @@ NSString *const YAMLErrorDomain = @"com.github.mirek.yaml";
 
 static int
 __YAMLSerializationParserInputReadHandler (void *data, unsigned char *buffer, size_t size, size_t *size_read) {
-    NSInteger outcome = [(NSInputStream *) data read: (uint8_t *) buffer maxLength: size];
+    NSInteger outcome = [(__bridge NSInputStream *) data read: (uint8_t *) buffer maxLength: size];
     if (outcome < 0) {
         *size_read = 0;
         return NO;
@@ -42,7 +42,7 @@ static id
 __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOptions opt, NSError **error) {
 
     id root = nil;
-    id *objects = nil;
+    __strong id *objects = nil;
 
     // Mutability options
     Class arrayClass = [NSMutableArray class]; // TODO: FIXME:
@@ -69,7 +69,8 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
     int i = 0;
 
-    objects = (id *) calloc(document->nodes.top - document->nodes.start, sizeof(id));
+    objects = (__strong id *)calloc(document->nodes.top - document->nodes.start, sizeof(id));
+  
     if (objects == NULL) {
         YAML_SET_ERROR(kYAMLErrorCodeOutOfMemory,  @"Couldn't allocate memory", @"Please try to free memory and retry");
         return nil;
@@ -119,13 +120,13 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
     // Retain the root object
     if (root != nil) {
-        [root retain];
+        // [root retain];
     }
 
     // Release all objects. The root object and all referenced (in containers) objects
     // will have retain count > 0
     for (node = document->nodes.start, i = 0; node < document->nodes.top; node++, i++) {
-        [objects[i] release];
+        // [objects[i] release];
     }
 
     if (objects != NULL) {
@@ -137,8 +138,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
 + (NSMutableArray *) objectsWithYAMLStream: (NSInputStream *) stream
                                    options: (YAMLReadOptions) opt
-                                     error: (NSError **) error
-{
+                                     error: (NSError **) error {
     NSMutableArray *documents = [NSMutableArray array];
     id documentObject = nil;
 
@@ -151,11 +151,13 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
     memset(&parser, 0, sizeof(yaml_parser_t));
     if (!yaml_parser_initialize(&parser)) {
-        YAML_SET_ERROR(kYAMLErrorCodeParserInitializationFailed, @"Error in yaml_parser_initialize(&parser)", @"Internal error, please let us know about this error");
+        YAML_SET_ERROR(kYAMLErrorCodeParserInitializationFailed,
+                       @"Error in yaml_parser_initialize(&parser)",
+                       @"Internal error, please let us know about this error");
         return nil;
     }
 
-    yaml_parser_set_input(&parser, __YAMLSerializationParserInputReadHandler, (void *)stream);
+    yaml_parser_set_input(&parser, __YAMLSerializationParserInputReadHandler, (__bridge void *)stream);
 
     while (!done) {
 
@@ -172,7 +174,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
                 yaml_document_delete(&document);
             } else {
                 [documents addObject: documentObject];
-                [documentObject release];
+                //[documentObject release];
             }
         }
 
@@ -197,7 +199,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
     if (data != nil) {
         NSInputStream *stream = [[NSInputStream alloc] initWithData: data];
         result = [self objectsWithYAMLStream: stream options: opt error: error];
-        [stream release];
+        //[stream release];
     }
     return result;
 }
@@ -223,7 +225,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
 static int
 __YAMLSerializationEmitterOutputWriteHandler (void *data, unsigned char *buffer, size_t size) {
-    return ([((NSOutputStream *) data) write: buffer maxLength: size] > 0);
+    return ([((__bridge NSOutputStream *) data) write: buffer maxLength: size] > 0);
 }
 
 static int
@@ -288,7 +290,7 @@ __YAMLSerializationAddObject (yaml_document_t *document, id value) {
     }
 
     yaml_emitter_set_encoding(&emitter, YAML_UTF8_ENCODING);
-    yaml_emitter_set_output(&emitter, __YAMLSerializationEmitterOutputWriteHandler, (void *)stream);
+    yaml_emitter_set_output(&emitter, __YAMLSerializationEmitterOutputWriteHandler, (__bridge void *)stream);
 
     // Open output stream.
     [stream open];
@@ -318,13 +320,13 @@ __YAMLSerializationAddObject (yaml_document_t *document, id value) {
     NSData *result = nil;
     NSOutputStream *stream = [[NSOutputStream alloc] initToMemory];
     [self writeObject: object toYAMLStream: stream options: opt error: error];
-    result = [[stream propertyForKey: NSStreamDataWrittenToMemoryStreamKey] retain];
-    [stream release];
+    result = [stream propertyForKey: NSStreamDataWrittenToMemoryStreamKey];
+    //[stream release];
     return result;
 }
 
 + (NSData *) YAMLDataWithObject: (id) object options: (YAMLWriteOptions) opt error: (NSError **) error {
-    return [[self createYAMLDataWithObject: object options: opt error: error] autorelease];
+    return [self createYAMLDataWithObject: object options: opt error: error];
 }
 
 + (NSString *) createYAMLStringWithObject: (id) object options: (YAMLWriteOptions) opt error: (NSError **) error {
@@ -334,7 +336,7 @@ __YAMLSerializationAddObject (yaml_document_t *document, id value) {
 }
 
 + (NSString *) YAMLStringWithObject: (id) object options: (YAMLWriteOptions) opt error: (NSError **) error {
-    return [[self createYAMLStringWithObject: object options: opt error: error] autorelease];
+    return [self createYAMLStringWithObject: object options: opt error: error];
 }
 
 #pragma mark Deprecated
