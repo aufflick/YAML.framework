@@ -40,15 +40,10 @@
   NSMutableArray *yaml = [YAMLSerialization objectsWithYAMLData:data
                                                         options:kYAMLReadOptionStringScalars
                                                           error:&error];
-  
-  // TODO(greg_fu): Add error assertion
 
   XCTAssertNil(error, @"There should be no error");
 	NSLog(@"YAMLWithData took %f", ([[NSDate date] timeIntervalSince1970] - before));
-  
 	NSLog(@"%@", yaml);
-  
-  // TODO(greg_fu): change to xcassert
   XCTAssertEqual((int) 10, (int) [yaml count], @"Wrong number of expected objects");
 }
 
@@ -65,10 +60,7 @@
   
   XCTAssertNil(error, @"Error should not be raised");
 	NSLog(@"YAMLWithStream took %f", ([[NSDate date] timeIntervalSince1970] - before2));
-	
   NSLog(@"%@", yaml2);
-  
-  // TODO(gfurman): Convert to xctest
   XCTAssertEqual((int) 10, (int) [yaml2 count], @"Wrong number of expected objects");
 }
 
