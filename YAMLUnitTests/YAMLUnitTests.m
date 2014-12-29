@@ -14,12 +14,15 @@
 
 @end
 
-@implementation YAMLUnitTests
+@implementation YAMLUnitTests {
+  NSBundle *_testBundle;
+}
 
 #pragma mark - Setup
 
 - (void)setUp {
   [super setUp];
+  _testBundle = [NSBundle bundleForClass:[self class]];
 }
 
 - (void)tearDown {
@@ -62,6 +65,24 @@
 	NSLog(@"YAMLWithStream took %f", ([[NSDate date] timeIntervalSince1970] - before2));
   NSLog(@"%@", yaml2);
   XCTAssertEqual((int) 10, (int) [yaml2 count], @"Wrong number of expected objects");
+}
+
+- (void)testEmptyYaml {
+  NSInputStream* stream = [self streamForExample:@"empty"];
+  NSLog(@"Stream: %@", stream);
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:kYAMLReadOptionStringScalars error:&error];
+  XCTAssert([objects count] == 0, @"Objects should be nil");
+  
+  id object = [YAMLSerialization objectWithYAMLStream:stream options:kYAMLReadOptionStringScalars error:&error];
+  XCTAssertNil(object, @"Object should be nil");
+}
+
+#pragma mark - Support Methods
+
+-(NSInputStream *)streamForExample:(NSString *)example {
+  NSString *fileName = [_testBundle pathForResource:example ofType:@"yaml"];
+  return [[NSInputStream alloc] initWithFileAtPath: fileName];
 }
 
 @end

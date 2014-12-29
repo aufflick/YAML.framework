@@ -188,7 +188,11 @@ static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, Y
 }
 
 + (id)objectWithYAMLStream:(NSInputStream *)stream options:(YAMLReadOptions)opt error:(NSError **)error {
-  return [[self objectsWithYAMLStream:stream options:opt error:error] objectAtIndex:0];
+  NSArray *result = [self objectsWithYAMLStream:stream options:opt error:error];
+  if ([result count] > 0) {
+    return [result objectAtIndex:0];
+  }
+  return nil;
 }
 
 + (NSMutableArray *)objectsWithYAMLData:(NSData *)data
