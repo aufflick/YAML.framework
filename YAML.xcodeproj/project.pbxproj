@@ -12,31 +12,25 @@
 		D319EEB713E5EE2A000EB46D /* YAMLUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D319EEB613E5EE2A000EB46D /* YAMLUnitTests.m */; };
 		D319EEBD13E5EFA5000EB46D /* YAMLSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF83D8A124D7A3E008517E5 /* YAMLSerialization.m */; };
 		D3E92E6413E5F68C00BA5B63 /* basic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D3E92E6313E5F68C00BA5B63 /* basic.yaml */; };
-		EB2B592E124E2117001FFEEB /* events.c in Sources */ = {isa = PBXBuildFile; fileRef = EB2B592D124E2117001FFEEB /* events.c */; };
-		EB2B5952124E230A001FFEEB /* yaml in Copy YAML Files */ = {isa = PBXBuildFile; fileRef = EB6C424F124D9B3E00886AD1 /* yaml */; };
 		EB6C3FBA124D872600886AD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6C3FB9124D872600886AD1 /* Foundation.framework */; };
 		EB6C4214124D99D000886AD1 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAML.framework */; };
 		EB6C422C124D9A4B00886AD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6C3FB9124D872600886AD1 /* Foundation.framework */; };
-		EB6C4252124D9B4A00886AD1 /* yaml in Copy YAML Files */ = {isa = PBXBuildFile; fileRef = EB6C424F124D9B3E00886AD1 /* yaml */; };
-		EB6C433C124E0CF600886AD1 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6C4226124D9A1700886AD1 /* test.m */; };
-		EB8C1AB014B795CC00BCDC1A /* yaml.h in Headers */ = {isa = PBXBuildFile; fileRef = EB8C1AAF14B795CC00BCDC1A /* yaml.h */; };
-		EB8C1ABA14B795E200BCDC1A /* api.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB114B795E200BCDC1A /* api.c */; };
-		EB8C1ABB14B795E200BCDC1A /* dumper.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB214B795E200BCDC1A /* dumper.c */; };
-		EB8C1ABC14B795E200BCDC1A /* emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB314B795E200BCDC1A /* emitter.c */; };
-		EB8C1ABD14B795E200BCDC1A /* loader.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB414B795E200BCDC1A /* loader.c */; };
-		EB8C1ABE14B795E200BCDC1A /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB514B795E200BCDC1A /* parser.c */; };
-		EB8C1ABF14B795E200BCDC1A /* reader.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB614B795E200BCDC1A /* reader.c */; };
-		EB8C1AC014B795E200BCDC1A /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB714B795E200BCDC1A /* scanner.c */; };
-		EB8C1AC114B795E200BCDC1A /* writer.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8C1AB814B795E200BCDC1A /* writer.c */; };
-		EB8C1AC214B795E200BCDC1A /* yaml_private.h in Headers */ = {isa = PBXBuildFile; fileRef = EB8C1AB914B795E200BCDC1A /* yaml_private.h */; };
-		EB8C1AC414B7964500BCDC1A /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = EB8C1AC314B7964500BCDC1A /* config.h */; };
 		EBE745BA124F8C0D00618049 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6C3FB9124D872600886AD1 /* Foundation.framework */; };
 		EBE745BB124F8C0D00618049 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAML.framework */; };
-		EBE745BD124F8C0D00618049 /* yaml in Copy YAML Files */ = {isa = PBXBuildFile; fileRef = EB6C424F124D9B3E00886AD1 /* yaml */; };
-		EBE745C7124F8C2F00618049 /* spec12examples.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE745AF124F8B5000618049 /* spec12examples.m */; };
 		EBF83D8B124D7A3E008517E5 /* YAMLSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF83D89124D7A3E008517E5 /* YAMLSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBF83D8C124D7A3E008517E5 /* YAMLSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF83D8A124D7A3E008517E5 /* YAMLSerialization.m */; };
 		FD68B63B1A51EF34002552E1 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* YAML.framework */; };
+		FD68B6461A51FD24002552E1 /* api.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B63D1A51FD24002552E1 /* api.c */; };
+		FD68B6471A51FD24002552E1 /* dumper.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B63E1A51FD24002552E1 /* dumper.c */; };
+		FD68B6481A51FD24002552E1 /* emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B63F1A51FD24002552E1 /* emitter.c */; };
+		FD68B6491A51FD24002552E1 /* loader.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B6401A51FD24002552E1 /* loader.c */; };
+		FD68B64A1A51FD24002552E1 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B6411A51FD24002552E1 /* parser.c */; };
+		FD68B64B1A51FD24002552E1 /* reader.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B6421A51FD24002552E1 /* reader.c */; };
+		FD68B64C1A51FD24002552E1 /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B6431A51FD24002552E1 /* scanner.c */; };
+		FD68B64D1A51FD24002552E1 /* writer.c in Sources */ = {isa = PBXBuildFile; fileRef = FD68B6441A51FD24002552E1 /* writer.c */; };
+		FD68B64E1A51FD24002552E1 /* yaml_private.h in Headers */ = {isa = PBXBuildFile; fileRef = FD68B6451A51FD24002552E1 /* yaml_private.h */; };
+		FD83C09B1A51FE3E000C097B /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = FD83C0991A51FE3E000C097B /* config.h */; };
+		FD83C09C1A51FE3E000C097B /* yaml.h in Headers */ = {isa = PBXBuildFile; fileRef = FD83C09A1A51FE3E000C097B /* yaml.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +64,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				EB2B5952124E230A001FFEEB /* yaml in Copy YAML Files */,
 			);
 			name = "Copy YAML Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +74,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				EB6C4252124D9B4A00886AD1 /* yaml in Copy YAML Files */,
 			);
 			name = "Copy YAML Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +84,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				EBE745BD124F8C0D00618049 /* yaml in Copy YAML Files */,
 			);
 			name = "Copy YAML Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,26 +107,22 @@
 		D319EEB813E5EE2A000EB46D /* YAMLUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YAMLUnitTests-Prefix.pch"; sourceTree = "<group>"; };
 		D3E92E6313E5F68C00BA5B63 /* basic.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = basic.yaml; path = test/yaml/basic.yaml; sourceTree = SOURCE_ROOT; };
 		EB2B5928124E2100001FFEEB /* events */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = events; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB2B592D124E2117001FFEEB /* events.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = events.c; sourceTree = "<group>"; };
 		EB6C3FB9124D872600886AD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB6C420E124D99BE00886AD1 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB6C4226124D9A1700886AD1 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
-		EB6C424F124D9B3E00886AD1 /* yaml */ = {isa = PBXFileReference; lastKnownFileType = folder; path = yaml; sourceTree = "<group>"; };
-		EB8C1AAF14B795CC00BCDC1A /* yaml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml.h; path = "yaml-0.1.4/include/yaml.h"; sourceTree = "<group>"; };
-		EB8C1AB114B795E200BCDC1A /* api.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = api.c; path = "yaml-0.1.4/src/api.c"; sourceTree = "<group>"; };
-		EB8C1AB214B795E200BCDC1A /* dumper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dumper.c; path = "yaml-0.1.4/src/dumper.c"; sourceTree = "<group>"; };
-		EB8C1AB314B795E200BCDC1A /* emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = emitter.c; path = "yaml-0.1.4/src/emitter.c"; sourceTree = "<group>"; };
-		EB8C1AB414B795E200BCDC1A /* loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = loader.c; path = "yaml-0.1.4/src/loader.c"; sourceTree = "<group>"; };
-		EB8C1AB514B795E200BCDC1A /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parser.c; path = "yaml-0.1.4/src/parser.c"; sourceTree = "<group>"; };
-		EB8C1AB614B795E200BCDC1A /* reader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = reader.c; path = "yaml-0.1.4/src/reader.c"; sourceTree = "<group>"; };
-		EB8C1AB714B795E200BCDC1A /* scanner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = scanner.c; path = "yaml-0.1.4/src/scanner.c"; sourceTree = "<group>"; };
-		EB8C1AB814B795E200BCDC1A /* writer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = writer.c; path = "yaml-0.1.4/src/writer.c"; sourceTree = "<group>"; };
-		EB8C1AB914B795E200BCDC1A /* yaml_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml_private.h; path = "yaml-0.1.4/src/yaml_private.h"; sourceTree = "<group>"; };
-		EB8C1AC314B7964500BCDC1A /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "yaml-0.1.4/config.h"; sourceTree = "<group>"; };
-		EBE745AF124F8B5000618049 /* spec12examples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spec12examples.m; sourceTree = "<group>"; };
 		EBE745C1124F8C0D00618049 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF83D89124D7A3E008517E5 /* YAMLSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAMLSerialization.h; sourceTree = "<group>"; };
 		EBF83D8A124D7A3E008517E5 /* YAMLSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAMLSerialization.m; sourceTree = "<group>"; };
+		FD68B63D1A51FD24002552E1 /* api.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = api.c; path = "yaml-0.1.5/src/api.c"; sourceTree = "<group>"; };
+		FD68B63E1A51FD24002552E1 /* dumper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dumper.c; path = "yaml-0.1.5/src/dumper.c"; sourceTree = "<group>"; };
+		FD68B63F1A51FD24002552E1 /* emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = emitter.c; path = "yaml-0.1.5/src/emitter.c"; sourceTree = "<group>"; };
+		FD68B6401A51FD24002552E1 /* loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = loader.c; path = "yaml-0.1.5/src/loader.c"; sourceTree = "<group>"; };
+		FD68B6411A51FD24002552E1 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parser.c; path = "yaml-0.1.5/src/parser.c"; sourceTree = "<group>"; };
+		FD68B6421A51FD24002552E1 /* reader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = reader.c; path = "yaml-0.1.5/src/reader.c"; sourceTree = "<group>"; };
+		FD68B6431A51FD24002552E1 /* scanner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = scanner.c; path = "yaml-0.1.5/src/scanner.c"; sourceTree = "<group>"; };
+		FD68B6441A51FD24002552E1 /* writer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = writer.c; path = "yaml-0.1.5/src/writer.c"; sourceTree = "<group>"; };
+		FD68B6451A51FD24002552E1 /* yaml_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml_private.h; path = "yaml-0.1.5/src/yaml_private.h"; sourceTree = "<group>"; };
+		FD83C0991A51FE3E000C097B /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "yaml-0.1.5/config.h"; sourceTree = "<group>"; };
+		FD83C09A1A51FE3E000C097B /* yaml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml.h; path = "yaml-0.1.5/include/yaml.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +185,7 @@
 		0867D691FE84028FC02AAC07 /* YAML */ = {
 			isa = PBXGroup;
 			children = (
-				EB6C4222124D9A0200886AD1 /* test */,
-				EB8C1AAE14B794F000BCDC1A /* yaml-0.1.4 */,
+				FD68B63C1A51FCCA002552E1 /* yaml-0.1.5 */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
@@ -277,33 +263,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EB6C4222124D9A0200886AD1 /* test */ = {
+		FD68B63C1A51FCCA002552E1 /* yaml-0.1.5 */ = {
 			isa = PBXGroup;
 			children = (
-				EBE745AF124F8B5000618049 /* spec12examples.m */,
-				EB6C424F124D9B3E00886AD1 /* yaml */,
-				EB6C4226124D9A1700886AD1 /* test.m */,
-				EB2B592D124E2117001FFEEB /* events.c */,
+				FD83C0991A51FE3E000C097B /* config.h */,
+				FD83C09A1A51FE3E000C097B /* yaml.h */,
+				FD68B63D1A51FD24002552E1 /* api.c */,
+				FD68B63E1A51FD24002552E1 /* dumper.c */,
+				FD68B63F1A51FD24002552E1 /* emitter.c */,
+				FD68B6401A51FD24002552E1 /* loader.c */,
+				FD68B6411A51FD24002552E1 /* parser.c */,
+				FD68B6421A51FD24002552E1 /* reader.c */,
+				FD68B6431A51FD24002552E1 /* scanner.c */,
+				FD68B6441A51FD24002552E1 /* writer.c */,
+				FD68B6451A51FD24002552E1 /* yaml_private.h */,
 			);
-			path = test;
-			sourceTree = "<group>";
-		};
-		EB8C1AAE14B794F000BCDC1A /* yaml-0.1.4 */ = {
-			isa = PBXGroup;
-			children = (
-				EB8C1AC314B7964500BCDC1A /* config.h */,
-				EB8C1AB114B795E200BCDC1A /* api.c */,
-				EB8C1AB214B795E200BCDC1A /* dumper.c */,
-				EB8C1AB314B795E200BCDC1A /* emitter.c */,
-				EB8C1AB414B795E200BCDC1A /* loader.c */,
-				EB8C1AB514B795E200BCDC1A /* parser.c */,
-				EB8C1AB614B795E200BCDC1A /* reader.c */,
-				EB8C1AB714B795E200BCDC1A /* scanner.c */,
-				EB8C1AB814B795E200BCDC1A /* writer.c */,
-				EB8C1AB914B795E200BCDC1A /* yaml_private.h */,
-				EB8C1AAF14B795CC00BCDC1A /* yaml.h */,
-			);
-			name = "yaml-0.1.4";
+			name = "yaml-0.1.5";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF83D8B124D7A3E008517E5 /* YAMLSerialization.h in Headers */,
-				EB8C1AB014B795CC00BCDC1A /* yaml.h in Headers */,
-				EB8C1AC214B795E200BCDC1A /* yaml_private.h in Headers */,
-				EB8C1AC414B7964500BCDC1A /* config.h in Headers */,
+				FD68B64E1A51FD24002552E1 /* yaml_private.h in Headers */,
+				FD83C09B1A51FE3E000C097B /* config.h in Headers */,
+				FD83C09C1A51FE3E000C097B /* yaml.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +333,7 @@
 			name = YAMLUnitTests;
 			productName = YAMLUnitTests;
 			productReference = D319EEA613E5EE2A000EB46D /* YAMLUnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		EB2B5927124E2100001FFEEB /* events */ = {
 			isa = PBXNativeTarget;
@@ -472,15 +447,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD68B64A1A51FD24002552E1 /* parser.c in Sources */,
 				EBF83D8C124D7A3E008517E5 /* YAMLSerialization.m in Sources */,
-				EB8C1ABA14B795E200BCDC1A /* api.c in Sources */,
-				EB8C1ABB14B795E200BCDC1A /* dumper.c in Sources */,
-				EB8C1ABC14B795E200BCDC1A /* emitter.c in Sources */,
-				EB8C1ABD14B795E200BCDC1A /* loader.c in Sources */,
-				EB8C1ABE14B795E200BCDC1A /* parser.c in Sources */,
-				EB8C1ABF14B795E200BCDC1A /* reader.c in Sources */,
-				EB8C1AC014B795E200BCDC1A /* scanner.c in Sources */,
-				EB8C1AC114B795E200BCDC1A /* writer.c in Sources */,
+				FD68B6461A51FD24002552E1 /* api.c in Sources */,
+				FD68B64C1A51FD24002552E1 /* scanner.c in Sources */,
+				FD68B6471A51FD24002552E1 /* dumper.c in Sources */,
+				FD68B6481A51FD24002552E1 /* emitter.c in Sources */,
+				FD68B6491A51FD24002552E1 /* loader.c in Sources */,
+				FD68B64D1A51FD24002552E1 /* writer.c in Sources */,
+				FD68B64B1A51FD24002552E1 /* reader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +472,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB2B592E124E2117001FFEEB /* events.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +479,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB6C433C124E0CF600886AD1 /* test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +486,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBE745C7124F8C2F00618049 /* spec12examples.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
