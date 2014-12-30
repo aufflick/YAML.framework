@@ -55,6 +55,13 @@ static NSNumber *ParseInt(NSString *str) {
   return [numberFormatter numberFromString:str];
 }
 
+static NSNumber *ParseBool(NSString* str) {
+  if ([@[@"y", @"yes", @"true", @"on"] containsObject:str]) return @YES;
+  if ([@[@"n", @"no", @"false", @"off"] containsObject:str]) return @NO;
+  return nil;
+  
+}
+
 // Serialize single, parsed document. Does not destroy the document.
 static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, YAMLReadOptions opt, NSError **error) {
   
@@ -98,6 +105,7 @@ static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, Y
           id parsedValue;
           parsedValue = ParseNull(stringValue);
           parsedValue = parsedValue ? parsedValue : ParseInt(stringValue);
+          parsedValue = parsedValue ? parsedValue : ParseBool(stringValue);
           parsedValue = parsedValue ? parsedValue : stringValue;
           
           objects[i] = parsedValue;

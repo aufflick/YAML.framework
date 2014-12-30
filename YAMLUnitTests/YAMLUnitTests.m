@@ -97,7 +97,7 @@
   XCTAssertEqual(list[2], [NSNull null], @"Should be nil.");
 }
 
-- (void)testIntParsing {
+- (void)testNumberParsing {
   NSInputStream* stream = [self streamForExample:@"sequenceWithNumbers"];
   NSError *error;
   NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:0 error:&error];
@@ -105,6 +105,24 @@
   XCTAssertEqualObjects(list[0], [NSNumber numberWithInt:1], @"Should parse integer 1.");
   XCTAssertEqualObjects(list[1], [NSNumber numberWithDouble:1.2], @"Should parse double 1.2");
   XCTAssertEqualObjects(list[2], [NSNumber numberWithDouble:100], @"Should parse double 1e2");
+}
+
+- (void)testBoolParsing {
+  NSInputStream* stream = [self streamForExample:@"sequenceWithBools"];
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:0 error:&error];
+  NSArray *list = objects[0];
+  XCTAssertEqualObjects(list[0], @YES, @"Should parse yes.");
+  XCTAssertEqualObjects(list[1], @NO, @"Should parse no.");
+
+  XCTAssertEqualObjects(list[2], @YES, @"Should parse y.");
+  XCTAssertEqualObjects(list[3], @NO, @"Should parse n.");
+
+  XCTAssertEqualObjects(list[4], @YES, @"Should parse true.");
+  XCTAssertEqualObjects(list[5], @NO, @"Should parse false.");
+
+  XCTAssertEqualObjects(list[6], @YES, @"Should parse on.");
+  XCTAssertEqualObjects(list[7], @NO, @"Should parse off.");
 }
 
 #pragma mark - Support Methods
