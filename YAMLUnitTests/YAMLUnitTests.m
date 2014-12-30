@@ -37,7 +37,7 @@
                                                                         ofType:@"yaml"];
 	NSData *data = [NSData dataWithContentsOfFile:fileName];
   
-  NSTimeInterval before = [[NSDate date] timeIntervalSince1970];
+  //NSTimeInterval before = [[NSDate date] timeIntervalSince1970];
   
   NSError *error;
   NSMutableArray *yaml = [YAMLSerialization objectsWithYAMLData:data
@@ -45,8 +45,8 @@
                                                           error:&error];
 
   XCTAssertNil(error, @"There should be no error");
-	NSLog(@"YAMLWithData took %f", ([[NSDate date] timeIntervalSince1970] - before));
-	NSLog(@"%@", yaml);
+	//NSLog(@"YAMLWithData took %f", ([[NSDate date] timeIntervalSince1970] - before));
+	//NSLog(@"%@", yaml);
   XCTAssertEqual((int) 10, (int) [yaml count], @"Wrong number of expected objects");
 }
 
@@ -56,26 +56,55 @@
   NSInputStream *stream = [[NSInputStream alloc] initWithFileAtPath: fileName];
 
   NSError *error;
-	NSTimeInterval before2 = [[NSDate date] timeIntervalSince1970]; 
+	//NSTimeInterval before2 = [[NSDate date] timeIntervalSince1970];
 	NSMutableArray *yaml2 = [YAMLSerialization objectsWithYAMLStream:stream
                                                            options:kYAMLReadOptionStringScalars
                                                              error:&error];
   
   XCTAssertNil(error, @"Error should not be raised");
-	NSLog(@"YAMLWithStream took %f", ([[NSDate date] timeIntervalSince1970] - before2));
-  NSLog(@"%@", yaml2);
+	//NSLog(@"YAMLWithStream took %f", ([[NSDate date] timeIntervalSince1970] - before2));
+  //NSLog(@"%@", yaml2);
   XCTAssertEqual((int) 10, (int) [yaml2 count], @"Wrong number of expected objects");
 }
 
 - (void)testEmptyYaml {
   NSInputStream* stream = [self streamForExample:@"empty"];
-  NSLog(@"Stream: %@", stream);
   NSError *error;
   NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:kYAMLReadOptionStringScalars error:&error];
   XCTAssert([objects count] == 0, @"Objects should be nil");
   
   id object = [YAMLSerialization objectWithYAMLStream:stream options:kYAMLReadOptionStringScalars error:&error];
   XCTAssertNil(object, @"Object should be nil");
+}
+
+
+- (void)testSequenceParsing {
+  NSInputStream* stream = [self streamForExample:@"sequence"];
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:kYAMLReadOptionStringScalars error:&error];
+  NSArray *list = objects[0];
+  NSString *first = list[0];
+  XCTAssert([first isEqualToString:@"foo"], @"Can't parse sequence");
+}
+
+- (void)testNullParsing {
+  NSInputStream* stream = [self streamForExample:@"sequenceWithNull"];
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:0 error:&error];
+  NSArray *list = objects[0];
+  XCTAssertEqual(list[0], [NSNull null], @"Should be nil.");
+  XCTAssertEqual(list[1], [NSNull null], @"Should be nil.");
+  XCTAssertEqual(list[2], [NSNull null], @"Should be nil.");
+}
+
+- (void)testIntParsing {
+  NSInputStream* stream = [self streamForExample:@"sequenceWithNumbers"];
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:0 error:&error];
+  NSArray *list = objects[0];
+  XCTAssertEqualObjects(list[0], [NSNumber numberWithInt:1], @"Should parse integer 1.");
+  XCTAssertEqualObjects(list[1], [NSNumber numberWithDouble:1.2], @"Should parse double 1.2");
+  XCTAssertEqualObjects(list[2], [NSNumber numberWithDouble:100], @"Should parse double 1e2");
 }
 
 #pragma mark - Support Methods

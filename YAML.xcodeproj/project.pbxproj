@@ -32,6 +32,9 @@
 		FD83C09B1A51FE3E000C097B /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = FD83C0991A51FE3E000C097B /* config.h */; };
 		FD83C09C1A51FE3E000C097B /* yaml.h in Headers */ = {isa = PBXBuildFile; fileRef = FD83C09A1A51FE3E000C097B /* yaml.h */; };
 		FD83C0A31A520E84000C097B /* empty.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A21A520E84000C097B /* empty.yaml */; };
+		FD83C0A51A521745000C097B /* sequence.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A41A521745000C097B /* sequence.yaml */; };
+		FD83C0A71A5218CC000C097B /* sequenceWithNull.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A61A5218CC000C097B /* sequenceWithNull.yaml */; };
+		FD83C0A91A52259C000C097B /* sequenceWithNumbers.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		FD83C0991A51FE3E000C097B /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "yaml-0.1.5/config.h"; sourceTree = "<group>"; };
 		FD83C09A1A51FE3E000C097B /* yaml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml.h; path = "yaml-0.1.5/include/yaml.h"; sourceTree = "<group>"; };
 		FD83C0A21A520E84000C097B /* empty.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = empty.yaml; path = examples/inputs/empty.yaml; sourceTree = "<group>"; };
+		FD83C0A41A521745000C097B /* sequence.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequence.yaml; sourceTree = "<group>"; };
+		FD83C0A61A5218CC000C097B /* sequenceWithNull.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithNull.yaml; sourceTree = "<group>"; };
+		FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithNumbers.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				FD83C0A11A520E1B000C097B /* inputs */,
-				D3E92E6313E5F68C00BA5B63 /* basic.yaml */,
 			);
 			name = examples;
 			sourceTree = "<group>";
@@ -295,7 +300,11 @@
 		FD83C0A11A520E1B000C097B /* inputs */ = {
 			isa = PBXGroup;
 			children = (
+				D3E92E6313E5F68C00BA5B63 /* basic.yaml */,
 				FD83C0A21A520E84000C097B /* empty.yaml */,
+				FD83C0A41A521745000C097B /* sequence.yaml */,
+				FD83C0A61A5218CC000C097B /* sequenceWithNull.yaml */,
+				FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */,
 			);
 			name = inputs;
 			sourceTree = "<group>";
@@ -457,6 +466,9 @@
 				D319EEB413E5EE2A000EB46D /* InfoPlist.strings in Resources */,
 				FD83C0A31A520E84000C097B /* empty.yaml in Resources */,
 				D3E92E6413E5F68C00BA5B63 /* basic.yaml in Resources */,
+				FD83C0A91A52259C000C097B /* sequenceWithNumbers.yaml in Resources */,
+				FD83C0A71A5218CC000C097B /* sequenceWithNull.yaml in Resources */,
+				FD83C0A51A521745000C097B /* sequence.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

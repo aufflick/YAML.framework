@@ -21,7 +21,10 @@ NSString *const YAMLErrorDomain = @"com.github.mirek.yaml";
                                             recovery, NSLocalizedRecoverySuggestionErrorKey, \
                                             nil]]
 
+
+
 @implementation YAMLSerialization
+
 
 #pragma mark Reading YAML
 
@@ -34,6 +37,22 @@ static int __YAMLSerializationParserInputReadHandler(void *data, unsigned char *
     *size_read = outcome;
     return YES;
   }
+}
+
+static NSNull *ParseNull(NSString *str) {
+  if(str.length == 0 || [str isEqualToString:@"~"] || [str isEqualToString:@"null"]) {
+    return [NSNull null];
+  }
+  return nil;
+}
+
+static NSNumber *ParseInt(NSString *str) {
+  static dispatch_once_t numberFormatterOnceToken;
+  static NSNumberFormatter *numberFormatter = nil;
+  dispatch_once(&numberFormatterOnceToken, ^{
+    numberFormatter = [[NSNumberFormatter alloc] init];
+  });
+  return [numberFormatter numberFromString:str];
 }
 
 // Serialize single, parsed document. Does not destroy the document.
@@ -54,15 +73,6 @@ static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, Y
     }
   }
   
-  if (opt & kYAMLReadOptionStringScalars) {
-    // Supported
-  } else {
-    YAML_SET_ERROR(kYAMLErrorInvalidOptions,
-                   @"Currently only kYAMLReadOptionStringScalars is supported",
-                   @"Serialize with kYAMLReadOptionStringScalars option");
-    return nil;
-  }
-  
   yaml_node_t *node = NULL;
   yaml_node_item_t *item = NULL;
   yaml_node_pair_t *pair = NULL;
@@ -76,11 +86,22 @@ static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, Y
     return nil;
   }
   
+  NSString *stringValue;
   // Create all objects, don't fill containers yet...
   for (node = document->nodes.start, i = 0; node < document->nodes.top; node++, i++) {
     switch (node->type) {
       case YAML_SCALAR_NODE:
-        objects[i] = [[stringClass alloc] initWithUTF8String:(char *)node->data.scalar.value];
+        stringValue = [NSString stringWithUTF8String:(char *)node->data.scalar.value];
+        if (opt & kYAMLReadOptionStringScalars) {
+          objects[i] = stringValue;
+        } else {
+          id parsedValue;
+          parsedValue = ParseNull(stringValue);
+          parsedValue = parsedValue ? parsedValue : ParseInt(stringValue);
+          parsedValue = parsedValue ? parsedValue : stringValue;
+          
+          objects[i] = parsedValue;
+        }
         if (!root) root = objects[i];
         break;
         
