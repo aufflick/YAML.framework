@@ -37,6 +37,7 @@
 		FD83C0A91A52259C000C097B /* sequenceWithNumbers.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */; };
 		FD83C0AB1A522816000C097B /* sequenceWithBools.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0AA1A522816000C097B /* sequenceWithBools.yaml */; };
 		FD83C0DE1A538264000C097B /* complex.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0DD1A538264000C097B /* complex.yaml */; };
+		FD83C0E11A548454000C097B /* date.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0E01A548454000C097B /* date.yaml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithNumbers.yaml; sourceTree = "<group>"; };
 		FD83C0AA1A522816000C097B /* sequenceWithBools.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithBools.yaml; sourceTree = "<group>"; };
 		FD83C0DD1A538264000C097B /* complex.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = complex.yaml; sourceTree = "<group>"; };
+		FD83C0E01A548454000C097B /* date.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = date.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 				FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */,
 				FD83C0AA1A522816000C097B /* sequenceWithBools.yaml */,
 				FD83C0DD1A538264000C097B /* complex.yaml */,
+				FD83C0E01A548454000C097B /* date.yaml */,
 			);
 			name = inputs;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				FD83C0A91A52259C000C097B /* sequenceWithNumbers.yaml in Resources */,
 				FD83C0DE1A538264000C097B /* complex.yaml in Resources */,
 				FD83C0A71A5218CC000C097B /* sequenceWithNull.yaml in Resources */,
+				FD83C0E11A548454000C097B /* date.yaml in Resources */,
 				FD83C0A51A521745000C097B /* sequence.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

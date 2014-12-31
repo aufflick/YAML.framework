@@ -63,6 +63,17 @@ static NSNumber *ParseBool(NSString* str) {
   
 }
 
+static NSDate *ParseDate(NSString *str) {
+  static dispatch_once_t dateFormatterOnceToken;
+  static NSDateFormatter *formatter;
+  dispatch_once(&dateFormatterOnceToken, ^{
+    formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"YYYY-MM-DD";
+  });
+  
+  return [formatter dateFromString:str];
+}
+
 // Serialize single, parsed document. Does not destroy the document.
 static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, YAMLReadOptions opt, NSError **error) {
   
@@ -107,6 +118,7 @@ static id __YAMLSerializationObjectWithYAMLDocument(yaml_document_t *document, Y
           parsedValue = ParseNull(stringValue);
           parsedValue = parsedValue ? parsedValue : ParseInt(stringValue);
           parsedValue = parsedValue ? parsedValue : ParseBool(stringValue);
+          parsedValue = parsedValue ? parsedValue : ParseDate(stringValue);
           parsedValue = parsedValue ? parsedValue : stringValue;
           
           objects[i] = parsedValue;

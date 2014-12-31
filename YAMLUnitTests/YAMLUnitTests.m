@@ -134,6 +134,23 @@
   NSLog(@"Objects: %@", list);
 }
 
+- (void)testDateParsing {
+  
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  formatter.dateFormat = @"YYYY-MM-DD";
+
+  NSDate *expectedDate = [formatter dateFromString:@"2002-01-05"];
+  NSLog(@"Expected Date: %@", expectedDate);
+  NSInputStream* stream = [self streamForExample:@"date"];
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:0 error:&error];
+  NSDictionary *map = objects[0];
+  XCTAssertNil(error, @"Error detected %@", error);
+  NSLog(@"Date: %@", map[@"date"]);
+  XCTAssertEqualObjects(expectedDate, map[@"date"], @"Objects do not match");
+  
+}
+
 #pragma mark - Support Methods
 
 -(NSInputStream *)streamForExample:(NSString *)example {
