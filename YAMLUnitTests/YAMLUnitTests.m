@@ -125,6 +125,15 @@
   XCTAssertEqualObjects(list[7], @NO, @"Should parse off.");
 }
 
+- (void)testComplex {
+  NSInputStream* stream = [self streamForExample:@"complex"];
+  NSError *error;
+  NSMutableArray* objects = [YAMLSerialization objectsWithYAMLStream:stream options:0 error:&error];
+  NSArray *list = objects[0];
+  XCTAssertNil(error, @"Error detected %@", error);
+  NSLog(@"Objects: %@", list);
+}
+
 #pragma mark - Support Methods
 
 -(NSInputStream *)streamForExample:(NSString *)example {

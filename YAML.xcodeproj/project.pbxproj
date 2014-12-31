@@ -36,6 +36,7 @@
 		FD83C0A71A5218CC000C097B /* sequenceWithNull.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A61A5218CC000C097B /* sequenceWithNull.yaml */; };
 		FD83C0A91A52259C000C097B /* sequenceWithNumbers.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */; };
 		FD83C0AB1A522816000C097B /* sequenceWithBools.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0AA1A522816000C097B /* sequenceWithBools.yaml */; };
+		FD83C0DE1A538264000C097B /* complex.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FD83C0DD1A538264000C097B /* complex.yaml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		FD83C0A61A5218CC000C097B /* sequenceWithNull.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithNull.yaml; sourceTree = "<group>"; };
 		FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithNumbers.yaml; sourceTree = "<group>"; };
 		FD83C0AA1A522816000C097B /* sequenceWithBools.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequenceWithBools.yaml; sourceTree = "<group>"; };
+		FD83C0DD1A538264000C097B /* complex.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = complex.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				FD83C0A61A5218CC000C097B /* sequenceWithNull.yaml */,
 				FD83C0A81A52259C000C097B /* sequenceWithNumbers.yaml */,
 				FD83C0AA1A522816000C097B /* sequenceWithBools.yaml */,
+				FD83C0DD1A538264000C097B /* complex.yaml */,
 			);
 			name = inputs;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				FD83C0A31A520E84000C097B /* empty.yaml in Resources */,
 				D3E92E6413E5F68C00BA5B63 /* basic.yaml in Resources */,
 				FD83C0A91A52259C000C097B /* sequenceWithNumbers.yaml in Resources */,
+				FD83C0DE1A538264000C097B /* complex.yaml in Resources */,
 				FD83C0A71A5218CC000C097B /* sequenceWithNull.yaml in Resources */,
 				FD83C0A51A521745000C097B /* sequence.yaml in Resources */,
 			);
