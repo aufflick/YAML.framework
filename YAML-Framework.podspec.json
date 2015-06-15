@@ -1,5 +1,5 @@
 {
-  "name": "YAML.framework",
+  "name": "YAML-Framework",
   "version": "0.0.2",
   "summary": "Proper YAML support for Objective-C. Based on recommended LibYAML.",
   "description": "YAML.framework provides support for YAML (de)serialisation similarly to standard NSPropertyListSerialization. Based on C LibYAML library by Kirill Simonov.",
